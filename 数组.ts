@@ -12,3 +12,14 @@ interface NumberArray{
     [index: number]: string
 }
 let str: NumberArray = ['aaa','bbb','ccc'];
+
+// 定义类数组用接口
+interface IArguments{
+    [index: number]: any,
+    length: number,
+    callee: Function
+}
+function sum(){
+    let args: IArguments = arguments;
+    console.log(args);
+}
