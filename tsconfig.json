@@ -61,6 +61,6 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "files": [
-    "数值类型.ts"
+    "数组.ts"
   ]
 }
