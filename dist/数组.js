@@ -6,3 +6,8 @@ arr.push('aaa');
 // 泛型定义数组
 var arr2 = [1, 2, 3, 4, 5];
 console.log(arr2);
+var str = ['aaa', 'bbb', 'ccc'];
+function sum() {
+    var args = arguments;
+    console.log(args);
+}
