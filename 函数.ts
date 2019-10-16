@@ -19,3 +19,11 @@ let mySum = (x: number, y: number): number => {
 let mySum2: (x: number, y: number) => number = (x: number, y: number): number => {
     return x + y;
 }
+
+// 用接口定义函数形状
+interface equalTypes{
+    (x: number, y:number): boolean
+}
+let numberEquals: equalTypes = (x: number, y: number): boolean => {
+    return x === y;
+}
