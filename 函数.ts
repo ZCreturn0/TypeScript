@@ -27,3 +27,16 @@ interface equalTypes{
 let numberEquals: equalTypes = (x: number, y: number): boolean => {
     return x === y;
 }
+
+// 可选参数   可选参数必须在必须参数后面
+interface alternativeParams{
+    (x: number, y?: string): string
+}
+let concatString: alternativeParams = (x: number, y?: string): string => {
+    if(y){
+        return (x + y).toString();
+    }
+    else{
+        return x.toString();
+    }
+}
