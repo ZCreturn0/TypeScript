@@ -52,3 +52,12 @@ function getName(firstName: string = 'z', lastName: string): string{
 console.log(getName('c'));
 console.log(getName(undefined ,'c'));
 console.log(getName('t', 'c'));
+
+// 剩余参数
+// 剩余参数是个数组,可以用个数组接收
+function addAll(...arr: number[]): number{
+    return arr.reduce((pre, cur) => {
+        return pre + cur;
+    });
+}
+console.log(addAll(1,2,3,4));
