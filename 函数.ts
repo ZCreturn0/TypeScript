@@ -12,7 +12,7 @@ console.log(sum('a',2));
 // 可通过编译
 // 定义了右侧函数返回值,左侧 mySum 通过类型推论得到类型
 let mySum = (x: number, y: number): number => {
-    return x+y;
+    return x + y;
 }
 // 正确的函数表达式
 // mySum2 是返回 number 类型的函数类型,定义为等号右边的内容  ts 中 => 左边表示输入,右边表示输出
@@ -40,3 +40,15 @@ let concatString: alternativeParams = (x: number, y?: string): string => {
         return x.toString();
     }
 }
+
+// 默认参数值
+// 设了默认参数后,有默认值的可选参数可放在必选参数前面
+// 但参数个数不能省略!!!!!!!!
+// firstName 是可选参数
+function getName(firstName: string = 'z', lastName: string): string{
+    return firstName + ' ' + lastName;
+}
+// 参数个数不匹配报错
+console.log(getName('c'));
+console.log(getName(undefined ,'c'));
+console.log(getName('t', 'c'));
