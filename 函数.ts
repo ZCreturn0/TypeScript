@@ -55,9 +55,27 @@ console.log(getName('t', 'c'));
 
 // 剩余参数
 // 剩余参数是个数组,可以用个数组接收
+// 剩余参数只能是最后一个参数
 function addAll(...arr: number[]): number{
     return arr.reduce((pre, cur) => {
         return pre + cur;
     });
 }
 console.log(addAll(1,2,3,4));
+
+// 重载函数
+// 1.先声明函数
+// 2.实现函数
+function reverse(p: number): number;
+function reverse(p: string): string;
+function reverse(p: number | string): number | string{
+    if(typeof p === 'number'){
+        return Number(p.toString().split('').reverse().join(''));
+    }
+    else if (typeof p === 'string'){
+        return p.split('').reverse().join('');
+    }
+    return 0;
+}
+console.log(reverse(123));
+console.log(reverse('abc'));

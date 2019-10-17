@@ -19,3 +19,50 @@ var mySum = function (x, y) {
 var mySum2 = function (x, y) {
     return x + y;
 };
+var numberEquals = function (x, y) {
+    return x === y;
+};
+var concatString = function (x, y) {
+    if (y) {
+        return (x + y).toString();
+    }
+    else {
+        return x.toString();
+    }
+};
+// 默认参数值
+// 设了默认参数后,有默认值的可选参数可放在必选参数前面
+// 但参数个数不能省略!!!!!!!!
+// firstName 是可选参数
+function getName(firstName, lastName) {
+    if (firstName === void 0) { firstName = 'z'; }
+    return firstName + ' ' + lastName;
+}
+// 参数个数不匹配报错
+console.log(getName('c'));
+console.log(getName(undefined, 'c'));
+console.log(getName('t', 'c'));
+// 剩余参数
+// 剩余参数是个数组,可以用个数组接收
+// 剩余参数只能是最后一个参数
+function addAll() {
+    var arr = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        arr[_i] = arguments[_i];
+    }
+    return arr.reduce(function (pre, cur) {
+        return pre + cur;
+    });
+}
+console.log(addAll(1, 2, 3, 4));
+function reverse(p) {
+    if (typeof p === 'number') {
+        return Number(p.toString().split('').reverse().join(''));
+    }
+    else if (typeof p === 'string') {
+        return p.split('').reverse().join('');
+    }
+    return 0;
+}
+console.log(reverse(123));
+console.log(reverse('abc'));
