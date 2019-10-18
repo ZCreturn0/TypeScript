@@ -3,7 +3,7 @@ type Name = string;
 type LogName = () => void;
 type SayName = Name | LogName;
 function tellName(name: SayName): void {
-    if (<Name>name) {
+    if ((<Name>name).length) {
         console.log(<Name>name);
     }
     else if (<LogName>name) {
