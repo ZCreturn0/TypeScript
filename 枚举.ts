@@ -9,3 +9,10 @@ enum Letters { A = 1, B = 3, C, D, E };
 console.log(Letters['B'] === 3);
 console.log(Letters['C'] === 4);
 console.log(Letters[5] === 'D');
+// 递增 key 可能会覆盖
+enum Colors {red = 1, orange = 3, yellow = 2, green, blue, purple};
+console.log(Colors['orange'] === 3);        // true
+// 被后面 green 覆盖
+console.log(Colors[3] === 'orange');        // false
+console.log(Colors['green'] === 3);         // true
+console.log(Colors[3] === 'green');         // true
