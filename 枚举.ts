@@ -16,3 +16,10 @@ console.log(Colors['orange'] === 3);        // true
 console.log(Colors[3] === 'orange');        // false
 console.log(Colors['green'] === 3);         // true
 console.log(Colors[3] === 'green');         // true
+
+// key 可为小数,字符串,字符串后必须手动指定 key
+enum Test {one, two, three = 4.5, four, five = <any>'aaa', six = <any>'bbb'};
+console.log(Test['one']);
+console.log(Test['three']);
+console.log(Test['four']);
+console.log(Test['five']);
