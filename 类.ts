@@ -42,9 +42,12 @@ console.log(Cat.age);
 // 构造被 protected 修饰时,该类只能被继承
 class Person{
     protected name: string;
+    // 在构造里赋值后不能更改
+    readonly life: number;
     protected constructor(name){
         this.name = name;
+        this.life = 100;
     }
 }
 // 报错,新建对象要访问构造函数,但构造函数被 protected 修饰,只能在子类访问
-let p = new Person('aaaa');
+// let p = new Person('aaaa');
