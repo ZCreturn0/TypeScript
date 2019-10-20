@@ -1,10 +1,15 @@
 class Animal{
-    protected name: string;
     constructor(name){
         this.name = name;
     }
     syaHi(){
         console.log(this.name);
+    }
+    get name(){
+        return this.name;
+    }
+    set name(name){
+        this.name = name;
     }
 }
 
@@ -16,3 +21,6 @@ class Cat extends Animal{
         console.log('Meow,'+this.name);
     }
 }
+
+let c = new Cat('aaaa');
+c.sayHi();
