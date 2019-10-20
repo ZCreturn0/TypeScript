@@ -1,5 +1,7 @@
 class Animal{
     protected name: string;
+    // 静态属性
+    static age: number = 12;
     constructor(name){
         this.name = name;
     }
@@ -35,3 +37,4 @@ let c = new Cat('aaaa');
 c.sayHi();
 console.log(Animal.isAnimal(a));
 console.log(Animal.isAnimal(c));
+console.log(Cat.age);
