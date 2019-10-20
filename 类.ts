@@ -38,3 +38,13 @@ c.sayHi();
 console.log(Animal.isAnimal(a));
 console.log(Animal.isAnimal(c));
 console.log(Cat.age);
+
+// 构造被 protected 修饰时,该类只能被继承
+class Person{
+    protected name: string;
+    protected constructor(name){
+        this.name = name;
+    }
+}
+// 报错,新建对象要访问构造函数,但构造函数被 protected 修饰,只能在子类访问
+let p = new Person('aaaa');
