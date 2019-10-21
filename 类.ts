@@ -73,5 +73,5 @@ class Apple extends Fruit{
     }
 }
 
-let apple = new Apple('apple');
+let apple: Apple = new Apple('apple');
 apple.taste();
