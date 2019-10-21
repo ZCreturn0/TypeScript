@@ -2,29 +2,29 @@
 // 接口里的方法都是抽象方法,实现接口的类都必须实现接口里的方法
 // 抽象告警
 interface Alarm{
-    alert();
+    alert(): void;
 }
 // 抽象声光告警
 interface LightAlarm{
-    lightAlarm();
+    lightAlarm(): void;
 }
 // 接口可多继承,接口可继承接口
 interface CarAlarm extends Alarm, LightAlarm{
-    alert();
-    lightAlarm();
+    alert(): void;
+    lightAlarm(): void;
 }
 class Door{}
 class SecurityDoor extends Door implements Alarm{
-    alert(){
+    alert(): void{
         console.log('SecurityDoor alarm');
     }
 }
 // 也可写成 class Car implements Alarm, LightAlarm,接口可多实现
 class Car implements CarAlarm{
-    lightAlarm(){
+    lightAlarm(): void{
         console.log('Lights toggle');
     }
-    alert(){
+    alert(): void{
         console.log('Car alarm');
         this.lightAlarm();
     }
