@@ -19,3 +19,8 @@ let numArr = createTypeArray(3, 5);
 let strArr = createTypeArray(4, 'a');
 console.log(numArr);
 console.log(strArr);
+
+// 多个类型参数
+function swap<U, T>(tuple: [U, T]): [T, U]{
+    return [tuple[1], tuple[0]];
+}
