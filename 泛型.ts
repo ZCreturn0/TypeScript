@@ -51,3 +51,16 @@ function copyFields<T extends U, U>(target: T, source: U): T{
 console.log(copyFields({a: 1, b: 2, c: 3}, {c: 4}));
 // 有不存在的属性,报错
 // console.log(copyFields({ a: 1, b: 2, c: 3 }, { d: 4 }));
+
+// 使用 interface 和 泛型 定义函数形状
+interface ArrType{
+    <T>(length: number, value: T): Array<T>
+}
+let fillArray: ArrType;
+fillArray = function <T>(length: number, value: T): Array<T>{
+    let arr: Array<T> = [];
+    for (let i: number = 0; i < length; i++){
+        arr.push(<T>value);
+    }
+    return arr;
+}
