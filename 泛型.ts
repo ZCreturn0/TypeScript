@@ -21,6 +21,21 @@ console.log(numArr);
 console.log(strArr);
 
 // 多个类型参数
+// 传入 [U,T] 返回 [T,U]
 function swap<U, T>(tuple: [U, T]): [T, U]{
     return [tuple[1], tuple[0]];
 }
+
+// 泛型约束
+// 希望传入的参数有 length 属性,需要使用泛型约束
+// 定义约束类型
+interface LengthWise{
+    length: number
+}
+function showLength<T extends LengthWise>(attr: T): void{
+    console.log(attr.length);
+}
+showLength('aaaa');
+showLength([1,2,3,4]);
+// 传入没 length 属性的参数会报错
+// showLength(123);
