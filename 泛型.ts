@@ -39,3 +39,15 @@ showLength('aaaa');
 showLength([1,2,3,4]);
 // 传入没 length 属性的参数会报错
 // showLength(123);
+
+// 类型参数互相约束
+// T 继承了 U,使得 U 中不会包含 T 中没有的属性
+function copyFields<T extends U, U>(target: T, source: U): T{
+    for(let key in source){
+        target[key] = (<T>source)[key];
+    }
+    return target;
+}
+console.log(copyFields({a: 1, b: 2, c: 3}, {c: 4}));
+// 有不存在的属性,报错
+// console.log(copyFields({ a: 1, b: 2, c: 3 }, { d: 4 }));
