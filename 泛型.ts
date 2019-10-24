@@ -77,3 +77,14 @@ fillArray2 = function <T>(length: number, value: T): Array<T> {
     }
     return arr;
 }
+
+// 泛型类
+class GetNumber<T> {
+    initValue: T;
+    add(bonus: T) => T;
+}
+let g = new GetNumber();
+g.initValue = 5;
+g.add = function(bonus){
+    return this.initValue + bonus;
+}
