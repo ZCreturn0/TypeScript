@@ -64,3 +64,16 @@ fillArray = function <T>(length: number, value: T): Array<T>{
     }
     return arr;
 }
+
+// 优化
+interface ArrType2<T> {
+    (length: number, value: T): Array<T>
+}
+let fillArray2: ArrType2<any>;
+fillArray2 = function <T>(length: number, value: T): Array<T> {
+    let arr: Array<T> = [];
+    for (let i: number = 0; i < length; i++) {
+        arr.push(<T>value);
+    }
+    return arr;
+}
