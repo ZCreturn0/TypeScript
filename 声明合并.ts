@@ -33,3 +33,12 @@ interface Alarm1 {
 //     price: string;
 //     weight: string;
 // }
+
+// 接口方法合并方式与方法合并一致
+interface Alarm3 {
+    price: number;
+    hello(x: string): string;
+}
+interface Alarm3 {
+    hello(x: number): number;
+}
