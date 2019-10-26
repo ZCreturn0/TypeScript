@@ -22,3 +22,14 @@ interface Alarm{
     price: number;
     weight: string;
 }
+
+// 合并类型必须一致
+interface Alarm1 {
+    price: number;
+}
+
+// price 类型不一致,报错
+// interface Alarm1 {
+//     price: string;
+//     weight: string;
+// }
