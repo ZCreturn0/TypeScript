@@ -88,3 +88,13 @@ g.initValue = 5;
 g.add = function(bonus){
     return this.initValue + bonus;
 }
+console.log(g.add(10));
+
+// 泛型默认类型
+function getArray<T = string>(num: number, value: T): Array<T>{
+    let arr: T[] = [];
+    for(let i = 0; i < num; i++){
+        arr.push(value);
+    }
+    return arr;
+}
