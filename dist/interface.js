@@ -44,3 +44,28 @@ var s = new SecurityDoor();
 s.alert();
 var c = new Car();
 c.alert();
+function getCounter() {
+    var counter = function (start) {
+        counter.current = start;
+        console.log(start);
+    };
+    counter.interval = 1;
+    counter.current = 0;
+    counter.reset = function () {
+        this.current = 0;
+    };
+    counter.log = function () {
+        console.log(this.current);
+    };
+    counter.add = function () {
+        this.current += this.interval;
+    };
+    return counter;
+}
+var counter = getCounter();
+counter(10);
+counter.interval = 2;
+counter.log();
+counter.reset();
+counter.add();
+counter.log();

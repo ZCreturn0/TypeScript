@@ -61,6 +61,10 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "files": [
-    "interface.ts"
+    "interface.ts",
+    "./namespace/IShape.ts",
+    "./namespace/Circle.ts",
+    "./namespace/Rect.ts",
+    "./namespace/TestShape.ts"
   ]
 }
