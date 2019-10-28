@@ -81,7 +81,7 @@ fillArray2 = function <T>(length: number, value: T): Array<T> {
 // 泛型类
 class GetNumber<T> {
     initValue: T;
-    add(bonus: T) => T;
+    add: (bonus: T) => T;
 }
 let g = new GetNumber();
 g.initValue = 5;

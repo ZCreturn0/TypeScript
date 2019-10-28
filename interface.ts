@@ -47,6 +47,7 @@ interface Counter {
 }
 function getCounter(): Counter {
     let counter = <Counter>function (start: number) {
+        counter.current = start;
         console.log(start);
     };
     counter.interval = 1;
